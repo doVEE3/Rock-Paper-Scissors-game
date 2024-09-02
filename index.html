@@ -1,96 +1,41 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/0d5614d002.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="modal.css">
     <title>ROCK PAPER SCISSORS</title>
 </head>
 <body>
+ 
+   <div class="container">
+     <header class="header">
+      <h1> Rock Paper Scissors </h1>
+      <button id="restart" class="restart-btn"> Restart Game </button>
+      <div id="score" class="score">
+        <p> Player: 0 </p>
+        <p> Computer: 0 </p>
+      </div>
+     </header>
+     <h2> Make Your Selection </h2>
+     <div class="choices">
+      <i id="rock" class="choice fas fa-hand-rock fa-10x"> </i>
+      <i id="paper" class="choice fas fa-hand-paper fa-10x"> </i>
+      <i id="scissors" class="choice fas fa-hand-scissors fa-10x"> </i>
+     </div>
+   </div>
+
+   <!-- Modal -->
+
+   <div class="modal">
+    <div id="result" class="modal-content"> </div>
+   </div>
+    
+
+   <script src="script.js"> </script>
 </body>
-
-<script>
-
- let humanScore = 0;
- let computerScore = 0; 
-  
-    
-
-  function getComputerChoice() {
-    randomNumber = Math.floor(Math.random()*3) + 1;
-    if (randomNumber === 1) {
-      return "Rock";
-    } else if (randomNumber === 2) {
-      return "Paper";
-    } else {
-      return "Scissors"
-    }
-} 
-     
-
-  function getHumanChoice(rock, paper, scissors) {
-    var humanChoice= prompt("ROCK, PAPER OR SCISSORS").toLowerCase();
-    if (humanChoice === "rock") {
-      return ("Rock");
-    } else if (humanChoice === "paper") {
-      return ("Paper");
-    } else if (humanChoice === "scissors") {
-      return ("Scissors");
-    } else {
-      return ("Wrong choice, try again")
-    }
-  }
-
-  const computerChoice = getComputerChoice;
-  
-
-
-  function playGame() {
-  function playRound(humanChoice, computerChoice) {
-
-
-    if (humanChoice === "Rock" && computerChoice === "Paper") { computerScore++;
-    console.log(`HUMAN: ${humanChoice}, COMPUTER: ${computerChoice} \n PAPER BEATS ROCK, COMPUTER WINS! \n HUMAN: ${humanScore} COMPUTER: ${computerScore}`);
-
-   } else if (humanChoice === "Paper" && computerChoice === "Rock"){ humanScore++;
-    console.log(`HUMAN: ${humanChoice}, COMPUTER: ${computerChoice} \n PAPER BEATS ROCK, HUMAN WINS! \n HUMAN: ${humanScore} COMPUTER: ${computerScore}`);
-
-   } else if (humanChoice === "Paper" && computerChoice === "Scissors"){ computerScore++;
-    console.log(`HUMAN: ${humanChoice}, COMPUTER: ${computerChoice} \n SCISSORS BEATS PAPER, COMPUTER WINS! \n HUMAN: ${humanScore} COMPUTER: ${computerScore}`);
-
-   } else if (humanChoice === "Scissors" && computerChoice === "Paper"){ humanScore++;
-    console.log (`HUMAN: ${humanChoice}, COMPUTER: ${computerChoice} \n SCISSORS BEATS PAPER, HUMAN WINS! \n HUMAN: ${humanScore} COMPUTER: ${computerScore}`);
-
-   } else if (humanChoice === "Scissors" && computerChoice === "Rock"){ computerScore++;
-    console.log(`HUMAN: ${humanChoice}, COMPUTER: ${computerChoice} \n ROCK BEATS SCISSORS, COMPUTER WINS! \n HUMAN: ${humanScore} COMPUTER: ${computerScore}`);
-
-   } else if (humanChoice === "Rock" && computerChoice === "Scissors"){ humanScore++;
-    console.log(`HUMAN: ${humanChoice}, COMPUTER: ${computerChoice} \n ROCK BEATS SCISSORS, HUMAN WINS! \n HUMAN: ${humanScore} COMPUTER: ${computerScore}`);
-
-   } else if (humanChoice === computerChoice){
-    console.log(`HUMAN: ${humanChoice}, COMPUTER: ${computerChoice} \n IT'S A TIE!" \n HUMAN: ${humanScore} COMPUTER: ${computerScore}`)
-   }  
-  }
-
-
-  const humanSelection = getHumanChoice();
-  const computerSelection = getComputerChoice();
-
-   playRound(humanSelection, computerSelection); 
-
-}
-    
-    for (i = 0; i = 3; i++) {
-    console.log(playGame());
-    if (humanScore == 3) {
-        console.log(`HUMAN: ${humanScore}, COMPUTER: ${computerScore} \n HUMAN WINS!!!`);
-        break;
-    } else if (computerScore == 3) {
-        console.log(`HUMAN: ${humanScore}, COMPUTER: ${computerScore} \n COMPUTER WINS!!!`);
-        break
-    } else
-        continue;
-} 
-
-
-</script>
+ 
 </html>
